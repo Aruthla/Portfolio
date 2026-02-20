@@ -1,146 +1,301 @@
 @use 'variables' as *;
 @use 'mixins' as *;
-@use 'sass:color';
 
 // Section Hero
 .hero {
+    position: relative;
     min-height: 100vh;
-    @include flex-center;
-    background: $gradient-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     color: $text-white;
     padding-top: 80px;
+    overflow: hidden;
+}
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: $spacing-xl;
-        align-items: center;
+// Fond animé avec des orbes de dégradé
+.hero-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
 
-        @include mobile {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+
+    &.orb-1 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, $primary-color 0%, transparent 70%);
+        top: -10%;
+        right: -10%;
+        animation-delay: 0s;
+    }
+
+    &.orb-2 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, $secondary-color 0%, transparent 70%);
+        bottom: -15%;
+        left: -5%;
+        animation-delay: 7s;
+    }
+
+    &.orb-3 {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, $accent-color 0%, transparent 70%);
+        top: 40%;
+        left: 30%;
+        animation-delay: 14s;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
     }
 }
 
 .hero-content {
-    h1 {
-        font-size: $font-size-5xl;
-        margin-bottom: $spacing-md;
-        line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: $spacing-2xl $spacing-md;
+    text-align: center;
+}
 
-        @include mobile {
-            font-size: $font-size-3xl;
-        }
+.hero-text {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: $spacing-lg;
+    color: $primary-light;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: $spacing-lg;
+    color: $text-white;
+
+    .gradient-text {
+        @include gradient-text;
+        display: inline-block;
     }
 }
 
-.highlight {
-    color: $accent-color;
-}
-
-.subtitle {
+.hero-description {
     font-size: $font-size-xl;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: $spacing-xl;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    strong {
+        color: $text-white;
+        font-weight: 600;
+    }
 }
 
-.cta-buttons {
+.hero-buttons {
     display: flex;
     gap: $spacing-md;
-
-    @include mobile {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+    justify-content: center;
+    margin-bottom: $spacing-xl;
+    flex-wrap: wrap;
 }
 
 .btn {
-    @include button-base;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $radius-lg;
+    font-weight: 600;
+    font-size: $font-size-base;
+    text-decoration: none;
+    @include transition(all);
+    cursor: pointer;
+    border: none;
 
     &-primary {
-        background-color: $accent-color;
-        color: $text-color;
+        background: $gradient-primary;
+        color: $text-white;
+        box-shadow: 0 10px 30px -10px rgba($primary-color, 0.5);
 
         &:hover {
-            background-color: color.adjust($accent-color, $lightness: -10%);
-            transform: translateY(-2px);
-            box-shadow: $shadow-lg;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px -10px rgba($primary-color, 0.7);
+        }
+
+        svg {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover svg {
+            transform: translateX(5px);
         }
     }
 
     &-secondary {
-        background-color: transparent;
+        background: rgba(255, 255, 255, 0.1);
         color: $text-white;
-        border: 2px solid $text-white;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
 
         &:hover {
-            background-color: $text-white;
-            color: $primary-color;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
         }
     }
 }
 
-.hero-image {
-    position: relative;
-}
+.hero-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
 
-.code-animation {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: $spacing-lg;
-    border-radius: $radius-lg;
-    backdrop-filter: blur(10px);
-}
+    .socials-label {
+        font-size: $font-size-sm;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 500;
+    }
 
-.code-line {
-    height: 20px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
-    margin-bottom: 15px;
-    border-radius: $radius-sm;
-    animation: pulse 2s ease-in-out infinite;
+    .socials-links {
+        display: flex;
+        gap: $spacing-sm;
+    }
 
-    @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-            animation-delay: #{($i - 1) * 0.3}s;
-            
-            @if $i == 1 {
-                width: 80%;
-            } @else if $i == 2 {
-                width: 95%;
-            } @else if $i == 3 {
-                width: 70%;
-            } @else {
-                width: 85%;
-            }
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: $radius-md;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $text-white;
+        @include transition(all);
+
+        &:hover {
+            background: $gradient-primary;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba($primary-color, 0.5);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
         }
     }
 }
 
-@keyframes pulse {
+.scroll-indicator {
+    position: absolute;
+    bottom: $spacing-xl;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+@keyframes bounce {
     0%, 100% {
-        opacity: 1;
+        transform: translateX(-50%) translateY(0);
     }
     50% {
-        opacity: 0.5;
-    }
-}
-
-// Animations d'apparition
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-
-    @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-            animation-delay: #{$i * 0.2}s;
-        }
+        transform: translateX(-50%) translateY(10px);
     }
 }
 
 @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+// Responsive
+@include mobile {
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        padding: $spacing-xl $spacing-md;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: $spacing-xs $spacing-md;
+    }
+
+    .hero-description {
+        font-size: $font-size-base;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .gradient-orb {
+        &.orb-1 {
+            width: 300px;
+            height: 300px;
+        }
+
+        &.orb-2 {
+            width: 250px;
+            height: 250px;
+        }
+
+        &.orb-3 {
+            width: 200px;
+            height: 200px;
+        }
     }
 }
