@@ -29,6 +29,7 @@ function Navbar() {
           <li><a href="#apropos" onClick={() => setIsMenuOpen(false)}>À propos</a></li>
           <li><a href="#competences" onClick={() => setIsMenuOpen(false)}>Compétences</a></li>
           <li><a href="#projets" onClick={() => setIsMenuOpen(false)}>Projets</a></li>
+          <li><a href="#faq" onClick={() => setIsMenuOpen(false)}>FAQ</a></li>
           <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
         </ul>
       </div>
