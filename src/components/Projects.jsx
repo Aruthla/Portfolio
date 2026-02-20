@@ -8,9 +8,9 @@ const projectsData = [
     link: 'https://github.com/Aruthla/tirage'
   },
   {
-    title: 'Christine Bordé - Graphiste & Illustratrice',
-    description: 'Site vitrine professionnel créé avec Faaster (anciennement ThemeCloud) pour présenter le portfolio d\'une graphiste et illustratrice',
-    tags: ['Faaster', 'ThemeCloud', 'No-Code'],
+    title: 'Christine Bordé - Tarologue',
+    description: 'Site vitrine professionnel pour une tarologue, hébergé sur Faaster (anciennement ThemeCloud), une solution WordPress tout-en-un',
+    tags: ['Faaster', 'WordPress', 'Hébergement'],
     link: 'https://christineborde.com/'
   }
 ]
