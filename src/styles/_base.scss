@@ -19,6 +19,35 @@ body {
     background-color: $bg-color;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+
+    // Bandes violettes sur les côtés avec dégradé vers le blanc
+    &::before,
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, $primary-color 0%, $primary-light 30%, rgba(255, 255, 255, 0.3) 70%, transparent 100%);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, $primary-color 0%, $primary-light 30%, rgba(255, 255, 255, 0.3) 70%, transparent 100%);
+    }
+
+    // Assurer que le contenu reste au-dessus des bandes
+    > * {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .container {
