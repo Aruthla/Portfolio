@@ -6,7 +6,7 @@ const projectsData = [
     description: 'Plateforme de tirage de runes en ligne avec paiements Stripe, système de réservation Calendly et CMS intégré',
     tags: ['React', 'Node.js', 'Stripe', 'SASS'],
     link: 'https://secretsdesrunes.com/',
-    image: '/tirage-runes.jpg'
+    image: `${import.meta.env.BASE_URL}tirage-runes.jpg`
   },
   {
     title: 'Christine Borde - Tarologue',
