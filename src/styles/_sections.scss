@@ -276,7 +276,7 @@
 }
 
 .contact-content {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -296,59 +296,32 @@
     }
 }
 
-.social-links {
-    display: flex;
-    gap: $spacing-md;
-}
+.contact-cta {
+    text-align: center;
 
-.social-link {
-    width: 50px;
-    height: 50px;
-    border-radius: $radius-full;
-    background-color: $bg-light;
-    @include flex-center;
-    color: $primary-color;
-    @include transition(all);
+    .btn-large {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-md;
+        padding: $spacing-lg $spacing-2xl;
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-md;
 
-    &:hover {
-        background-color: $primary-color;
-        color: $text-white;
-        transform: translateY(-5px);
-    }
-}
-
-// Formulaire de contact
-.contact-form {
-    background-color: $bg-light;
-    padding: $spacing-lg;
-    border-radius: $radius-xl;
-
-    button {
-        width: 100%;
-        padding: 15px 30px;
-        border: none;
-        cursor: pointer;
-        font-size: $font-size-base;
-    }
-}
-
-.form-group {
-    margin-bottom: 25px;
-
-    input,
-    textarea {
-        width: 100%;
-        padding: 15px;
-        border: 2px solid $border-color;
-        border-radius: $radius-md;
-        font-size: $font-size-base;
-        font-family: inherit;
-        @include transition(border-color);
-
-        &:focus {
-            outline: none;
-            border-color: $primary-color;
+        svg {
+            width: 28px;
+            height: 28px;
         }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px -10px rgba($primary-color, 0.7);
+        }
+    }
+
+    .contact-note {
+        color: $text-light;
+        font-size: $font-size-sm;
+        font-style: italic;
     }
 }
 
