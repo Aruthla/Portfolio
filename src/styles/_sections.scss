@@ -31,13 +31,20 @@
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: $spacing-xl;
     align-items: center;
 
+    > * {
+        flex: 1 1 calc(50% - $spacing-xl / 2);
+        min-width: 300px;
+    }
+
     @include mobile {
-        grid-template-columns: 1fr;
+        > * {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -50,12 +57,20 @@
 }
 
 .about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+
+    .stat-item {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 200px;
+    }
 
     @include mobile {
-        grid-template-columns: 1fr;
+        .stat-item {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -83,9 +98,16 @@
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+
+    .skill-card {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 250px;
+        max-width: 400px;
+    }
 }
 
 .skill-card {
@@ -141,12 +163,22 @@
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: $spacing-lg;
+    justify-content: center;
+
+    .project-card {
+        flex: 1 1 calc(33.333% - $spacing-lg);
+        min-width: 320px;
+        max-width: 450px;
+    }
 
     @include mobile {
-        grid-template-columns: 1fr;
+        .project-card {
+            flex-basis: 100%;
+            max-width: none;
+        }
     }
 }
 
@@ -237,12 +269,20 @@
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: $spacing-xl;
+    align-items: flex-start;
+
+    > * {
+        flex: 1 1 calc(50% - $spacing-xl / 2);
+        min-width: 300px;
+    }
 
     @include mobile {
-        grid-template-columns: 1fr;
+        > * {
+            flex-basis: 100%;
+        }
     }
 }
 
