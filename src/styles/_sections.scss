@@ -413,6 +413,8 @@
     color: $text-white;
     text-align: center;
     padding: $spacing-lg $spacing-md;
+    position: relative;
+    z-index: 1000000;
 
     p {
         margin-bottom: $spacing-sm;
