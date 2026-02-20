@@ -1,21 +1,28 @@
 {
   "name": "portfolio-personnel",
-  "version": "1.0.0",
-  "description": "Site portfolio personnel en HTML, CSS (SASS) et JavaScript",
-  "main": "index.html",
+  "version": "2.0.0",
+  "description": "Portfolio React - Développeuse web",
+  "type": "module",
   "scripts": {
-    "sass": "sass --watch scss/style.scss:style.css",
-    "build": "sass scss/style.scss:style.css --style=compressed",
-    "start": "npm run sass"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "portfolio",
+    "react",
     "sass",
     "web"
   ],
-  "author": "",
+  "author": "Laëtitia Borde",
   "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
-    "sass": "^1.77.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.77.0",
+    "vite": "^6.0.5"
   }
 }

@@ -1,135 +1,104 @@
-# Portfolio - Développeuse Web
+# Portfolio Personnel - React
 
-Site de présentation personnel moderne et responsive créé en HTML, SASS et JavaScript vanilla.
+Portfolio moderne de développeuse web, construit avec React, Vite et SASS.
 
-## 📋 Description
+## 🚀 Technologies utilisées
 
-Portfolio professionnel pour une développeuse web incluant :
-- **Page d'accueil** avec animation
-- **Section À propos** avec statistiques animées
-- **Compétences** avec barres de progression
-- **Projets** avec cartes interactives
-- **Formulaire de contact**
-- Design 100% responsive
-- **Thème violet** comme couleur principale
+- **React 18** - Bibliothèque JavaScript pour interfaces utilisateurs
+- **Vite** - Build tool moderne et rapide  
+- **SASS** - Préprocesseur CSS avec architecture modulaire
+- **JavaScript ES6+** - Fonctionnalités modernes de JavaScript
 
-## 🚀 Démarrage
+## 🎨 Caractéristiques
 
-### Installation
+- ✨ Design moderne avec thème violet personnalisé
+- 📱 Responsive design (mobile, tablette, desktop)
+- 🎭 Animations fluides et interactives
+- ⚡ Performance optimisée avec Vite
+- 🎯 Composants React réutilisables
+- 💅 Styles SASS modulaires
 
-1. Téléchargez ou clonez les fichiers
-2. Installez les dépendances :
-   ```bash
-   npm install
-   ```
+## 📦 Installation
 
-### Développement
-
-Pour compiler le SASS automatiquement lors des modifications :
 ```bash
-npm start
-```
+# Cloner le repository
+git clone https://github.com/Aruthla/Portfolio.git
 
-Pour compiler le SASS une seule fois :
-```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Build pour la production
 npm run build
+
+# Prévisualiser le build de production
+npm run preview
 ```
 
-### Visualisation
+## 🌐 Déploiement
 
-Ouvrez simplement `index.html` dans votre navigateur web.
+Le site est automatiquement déployé sur GitHub Pages via GitHub Actions à chaque push sur la branche `main`.
 
-## 🎨 Personnalisation
+**URL du site :** [https://Aruthla.github.io/Portfolio/](https://Aruthla.github.io/Portfolio/)
 
-### Modifier les couleurs
-
-Dans `scss/_variables.scss`, modifiez les variables SASS :
-```scss
-// Couleurs principales
-$primary-color: #8b5cf6;      // Violet principal
-$primary-dark: #7c3aed;        // Violet foncé
-$primary-light: #a78bfa;       // Violet clair
-$secondary-color: #d946ef;     // Rose/magenta
-$accent-color: #fbbf24;        // Jaune gold
-```
-
-### Structure SASS modulaire
-
-Le projet utilise une architecture SASS organisée en modules :
-- `_variables.scss` - Toutes les variables (couleurs, tailles, espacements)
-- `_mixins.scss` - Mixins réutilisables (flexbox, transitions, responsive)
-- `_base.scss` - Reset et styles de base
-- `_navigation.scss` - Barre de navigation
-- `_hero.scss` - Section héro/accueil
-- `_sections.scss` - Toutes les autres sections
-
-### Ajouter du contenu
-
-- **Textes** : Modifiez directement dans `index.html`
-- **Styles** : Éditez les fichiers SASS dans `scss/` (le CSS sera généré automatiquement)
-- **Images de projets** : Ajoutez vos images dans un dossier `images/` et liez-les
-- **Statistiques** : Changez les valeurs `data-target` dans les éléments `.stat-number`
-- **Compétences** : Ajustez `data-width` pour les barres de progression
-
-## 📁 Structure
+## 📁 Structure du projet
 
 ```
 Perso/
-├── index.html          # Structure HTML principale
-├── style.css           # CSS compilé (généré automatiquement)
-├── script.js           # Interactions et animations
-├── package.json        # Dépendances npm
-├── scss/
-│   ├── style.scss      # Fichier principal SASS
-│   ├── _variables.scss # Variables (couleurs, tailles, etc.)
-│   ├── _mixins.scss    # Mixins réutilisables
-│   ├── _base.scss      # Styles de base
-│   ├── _navigation.scss# Navigation
-│   SASS/SCSS** - Préprocesseur CSS avec architecture modulaire
-- **├── _hero.scss      # Section héro
-│   └── _sections.scss  # Autres sections
-└── README.md           # Ce fichier
+├── src/
+│   ├── components/      # Composants React
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── styles/         # Fichiers SASS
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── _base.scss
+│   │   ├── _navigation.scss
+│   │   ├── _hero.scss
+│   │   ├── _sections.scss
+│   │   └── style.scss
+│   ├── App.jsx        # Composant principal
+│   └── main.jsx       # Point d'entrée
+├── public/            # Ressources statiques
+├── .github/
+│   └── workflows/
+│       └── deploy.yml # CI/CD GitHub Actions
+├── index.html         # Template HTML
+├── vite.config.js     # Configuration Vite
+└── package.json       # Dépendances npm
 ```
 
-## ✨ Fonctionnalités
+## 🎯 Sections du portfolio
 
-- ✅ Design moderne et épuré
-- ✅ Navigation sticky avec indicateur de section active
-- ✅ Menu burger pour mobile
-- ✅ Animations au scroll (IntersectionObserver)
-- ✅ Compteurs animés pour les statistiques
-- ✅ Barres de progression pour les compétences
-- ✅ Cartes de projets interactives
-- ✅ Formulaire de contact fonctionnel
-- ✅ Effet parallaxe sur la section hero
-- ✅ 100% responsive (mobile, tablette, desktop)
+1. **Accueil (Hero)** - Présentation avec liens sociaux
+2. **À propos** - Présentation détaillée avec statistiques animées
+3. **Compétences** - Technologies maîtrisées avec barres de progression
+4. **Projets** - Showcase de projets récents avec liens GitHub
+5. **Contact** - Formulaire de contact et informations
 
-## 🛠️ Technologies
+## 💜 Thème de couleurs
 
-- **HTML5** - Structure sémantique
-- **CSS3** - Styles modernes (Grid, Flexbox, animations)
-- **JavaScript ES6** - Interactions et animations
+- Violet primaire : `#8b5cf6`
+- Violet foncé : `#7c3aed`
+- Violet clair : `#a78bfa`
+- Violet secondaire : `#d946ef`
+- Accent doré : `#fbbf24`
 
-## 📱 Responsive
+## 🛠️ Développement
 
-Le site s'adapte automatiquement à toutes les tailles d'écran :
-- Desktop (> 768px)
-- Tablette (≤ 768px)
-- Mobile (≤ 480px)
+Le projet utilise :
+- **React Hooks** pour la gestion d'état
+- **Intersection Observer** pour les animations au scroll
+- **CSS Modules via SASS** pour le style
+- **Vite HMR** pour le rechargement à chaud
 
-## 🎯 Prochaines étapes suggérées
+## 📝 License
 
-1. Ajoutez vos propres images de projets
-2. Connectez le formulaire à un service d'envoi d'emails (EmailJS, Formspree, etc.)
-3. Ajoutez un favicon
-4. Optimisez les images
-5. Ajoutez Google Analytics si souhaité
-6. Déployez sur GitHub Pages, Netlify ou Vercel
-
-## 📝 Licence
-
-Libre d'utilisation - Personnalisez selon vos besoins !
-
----
-
-Créé avec ❤️ et beaucoup de café ☕
+MIT © Laëtitia Borde

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy React to GitHub Pages
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build CSS from SASS
+      - name: Build React App with Vite
         run: npm run build
       
       - name: Setup Pages
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: './dist'
       
   deploy:
     environment:
