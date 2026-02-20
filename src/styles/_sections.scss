@@ -276,24 +276,14 @@
 }
 
 .contact-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-xl;
-    align-items: flex-start;
-
-    > * {
-        flex: 1 1 calc(50% - $spacing-xl / 2);
-        min-width: 300px;
-    }
-
-    @include mobile {
-        > * {
-            flex-basis: 100%;
-        }
-    }
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.contact-info {
+.contact-intro {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
     h3 {
         font-size: $font-size-3xl;
         margin-bottom: $spacing-md;
@@ -302,24 +292,7 @@
 
     p {
         color: $text-light;
-        margin-bottom: 30px;
         font-size: $font-size-lg;
-    }
-}
-
-.contact-details {
-    margin-bottom: $spacing-lg;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: $spacing-md;
-    color: $text-light;
-
-    svg {
-        stroke: $primary-color;
     }
 }
 

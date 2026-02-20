@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -6,6 +7,8 @@ function Contact() {
     email: '',
     message: ''
   })
+  const [sending, setSending] = useState(false)
+  const [status, setStatus] = useState('')
 
   const handleChange = (e) => {
     setFormData({
@@ -14,11 +17,35 @@ function Contact() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // TODO: Implémenter l'envoi du formulaire avec EmailJS
-    console.log('Form submitted:', formData)
-    alert('Message envoyé ! (fonctionnalité à implémenter)')
+    setSending(true)
+    setStatus('')
+
+    try {
+      // Configuration EmailJS
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'laetitia.cli@live.fr'
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+      )
+      
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      alert('Message envoyé avec succès !')
+    } catch (error) {
+      console.error('Erreur:', error)
+      setStatus('error')
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -26,31 +53,9 @@ function Contact() {
       <div className="container">
         <h2 className="section-title">Contactez-moi</h2>
         <div className="contact-content">
-          <div className="contact-info">
+          <div className="contact-intro">
             <h3>Travaillons ensemble</h3>
-            <p>Vous avez un projet en tête ? N'hésitez pas à me contacter, je serais ravie d'en discuter avec vous.</p>
-            <div className="contact-details">
-              <div className="contact-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <span>contact@devweb.fr</span>
-              </div>
-              <div className="contact-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Paris, France</span>
-              </div>
-              <div className="contact-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                <span>Sur demande</span>
-              </div>
-            </div>
+            <p>Vous avez un projet en tête ? N'hésitez pas à me contacter via le formulaire ci-dessous, je serais ravie d'en discuter avec vous.</p>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -89,7 +94,9 @@ function Contact() {
                 placeholder="Votre message..."
               />
             </div>
-            <button type="submit" className="btn btn-primary">Envoyer</button>
+            <button type="submit" className="btn btn-primary" disabled={sending}>
+              {sending ? 'Envoi en cours...' : 'Envoyer'}
+            </button>
           </form>
         </div>
       </div>
