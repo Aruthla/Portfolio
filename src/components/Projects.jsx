@@ -8,34 +8,10 @@ const projectsData = [
     link: 'https://github.com/Aruthla/tirage'
   },
   {
-    title: 'Kasa - Location d\'appartements',
-    description: 'Application web de location immobilière avec navigation React Router, carrousel d\'images et composants réutilisables',
-    tags: ['React', 'React Router', 'SCSS'],
-    link: 'https://github.com/Aruthla/Project7_Kasa'
-  },
-  {
-    title: 'Hot Takes - API Sauces Piquantes',
-    description: 'API REST sécurisée avec authentification JWT, upload d\'images et base de données MongoDB. Frontend Angular Material',
-    tags: ['Angular', 'TypeScript', 'Node.js', 'MongoDB'],
-    link: 'https://github.com/Aruthla/Project6_PIIQUANTE'
-  },
-  {
-    title: 'Numérologie',
-    description: 'Application web de calculs numérologiques avec interface interactive JavaScript',
-    tags: ['JavaScript', 'HTML5', 'CSS3'],
-    link: 'https://github.com/Aruthla/numerologie'
-  },
-  {
-    title: 'Ohmyfood',
-    description: 'Site web de réservation de restaurants avec animations CSS avancées et design mobile-first',
-    tags: ['HTML5', 'CSS3', 'Animations'],
-    link: 'https://github.com/Aruthla/Project3_Ohmyfood'
-  },
-  {
-    title: 'Kanap - E-commerce',
-    description: 'Site e-commerce avec panier dynamique, gestion de commandes et intégration API REST',
-    tags: ['JavaScript', 'API REST', 'LocalStorage'],
-    link: 'https://github.com/Aruthla/Project5_Kanap'
+    title: 'Christine Bordé - Graphiste & Illustratrice',
+    description: 'Site vitrine professionnel créé avec Faaster (anciennement ThemeCloud) pour présenter le portfolio d\'une graphiste et illustratrice',
+    tags: ['Faaster', 'ThemeCloud', 'No-Code'],
+    link: 'https://christineborde.com/'
   }
 ]
 
