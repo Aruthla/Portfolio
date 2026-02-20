@@ -5,7 +5,8 @@ const projectsData = [
     title: 'Le Murmure des Runes',
     description: 'Plateforme de tirage de runes en ligne avec paiements Stripe, système de réservation Calendly et CMS intégré',
     tags: ['React', 'Node.js', 'Stripe', 'SASS'],
-    link: 'https://github.com/Aruthla/tirage'
+    link: 'https://secretsdesrunes.com/',
+    image: '/tirage-runes.jpg'
   },
   {
     title: 'Christine Borde - Tarologue',
@@ -24,6 +25,7 @@ function Projects() {
           {projectsData.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-image">
+                {project.image && <img src={project.image} alt={project.title} />}
                 <div className="project-overlay">
                   <a 
                     href={project.link} 
