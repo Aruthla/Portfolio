@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 const skillsData = [
   {
     title: 'React & JavaScript',
     description: 'React, JavaScript ES6+, JSX, Hooks',
-    width: 95,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -17,7 +16,6 @@ const skillsData = [
   {
     title: 'SASS/CSS & HTML5',
     description: 'SASS, CSS3, HTML5, Responsive Design',
-    width: 90,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -29,7 +27,6 @@ const skillsData = [
   {
     title: 'Node.js & Express',
     description: 'Node.js, Express, MongoDB, REST API',
-    width: 85,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <ellipse cx="12" cy="5" rx="9" ry="3" />
@@ -41,7 +38,6 @@ const skillsData = [
   {
     title: 'Angular & TypeScript',
     description: 'Angular, TypeScript, RxJS, Material',
-    width: 80,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <polyline points="16 18 22 12 16 6" />
@@ -50,9 +46,19 @@ const skillsData = [
     )
   },
   {
+    title: 'WordPress & Faaster',
+    description: 'WordPress, Hébergement, Gestion de contenu',
+    icon: (
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+        <line x1="12" y1="22.08" x2="12" y2="12" />
+      </svg>
+    )
+  },
+  {
     title: 'APIs & Intégrations',
     description: 'Stripe, EmailJS, REST APIs, JWT Auth',
-    width: 85,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="12" cy="12" r="3" />
@@ -63,7 +69,6 @@ const skillsData = [
   {
     title: 'Git & Déploiement',
     description: 'Git, GitHub, Netlify, GitHub Actions',
-    width: 95,
     icon: (
       <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="12" cy="12" r="10" />
@@ -74,28 +79,8 @@ const skillsData = [
 ]
 
 function Skills() {
-  const [animated, setAnimated] = useState(false)
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !animated) {
-          setAnimated(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [animated])
-
   return (
-    <section id="competences" className="skills" ref={sectionRef}>
+    <section id="competences" className="skills">
       <div className="container">
         <h2 className="section-title">Mes Compétences</h2>
         <div className="skills-grid">
@@ -104,12 +89,6 @@ function Skills() {
               <div className="skill-icon">{skill.icon}</div>
               <h3>{skill.title}</h3>
               <p>{skill.description}</p>
-              <div className="skill-bar">
-                <div 
-                  className="skill-progress" 
-                  style={{ width: animated ? `${skill.width}%` : '0%' }}
-                />
-              </div>
             </div>
           ))}
         </div>
