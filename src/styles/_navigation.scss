@@ -9,7 +9,7 @@
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     box-shadow: $shadow;
-    z-index: 1000000;
+    z-index: 1000001;
     @include transition(all);
 
     &.scrolled {
