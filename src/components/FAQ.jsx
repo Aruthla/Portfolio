@@ -8,6 +8,10 @@ const faqData = [
 Une fois la visio terminée, nous reprenons rendez-vous une semaine plus tard afin que je vous remette le devis. Pendant cette semaine, vous pouvez me contacter à tout moment si vous souhaitez apporter des modifications majeures (ajout de pages, suppressions de pages, passage sur WordPress plutôt qu'une création complète ou vice-versa, etc.). 
 
 Une fois le devis validé, un premier paiement sera demandé. Une fois le paiement reçu, je commence la création du site et je vous tiens informée tout au long du processus de création afin de vérifier que le site est bien conforme à vos attentes.`
+  },
+  {
+    question: 'Puis-je payer en plusieurs fois ?',
+    answer: 'Tout à fait.'
   }
 ]
 
