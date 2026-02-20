@@ -8,7 +8,7 @@ const projectsData = [
     link: 'https://github.com/Aruthla/tirage'
   },
   {
-    title: 'Christine Bordé - Tarologue',
+    title: 'Christine Borde - Tarologue',
     description: 'Site vitrine professionnel pour une tarologue, hébergé sur Faaster (anciennement ThemeCloud), une solution WordPress tout-en-un',
     tags: ['Faaster', 'WordPress', 'Hébergement'],
     link: 'https://christineborde.com/'
