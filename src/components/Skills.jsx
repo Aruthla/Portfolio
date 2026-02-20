@@ -36,16 +36,6 @@ const skillsData = [
     )
   },
   {
-    title: 'Angular & TypeScript',
-    description: 'Angular, TypeScript, RxJS, Material',
-    icon: (
-      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
-      </svg>
-    )
-  },
-  {
     title: 'WordPress & Faaster',
     description: 'WordPress, Hébergement, Gestion de contenu',
     icon: (
