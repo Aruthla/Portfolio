@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 function About() {
-  const [stats, setStats] = useState({ projects: 0, years: 0, satisfaction: 0 })
+  const [stats, setStats] = useState({ projects: 0, years: 0 })
   const [hasAnimated, setHasAnimated] = useState(false)
   const sectionRef = useRef(null)
 
@@ -25,7 +25,7 @@ function About() {
 
   const animateStats = () => {
     const duration = 2000
-    const targets = { projects: 13, years: 2, satisfaction: 100 }
+    const targets = { projects: 13, years: 2 }
     const startTime = Date.now()
 
     const animate = () => {
@@ -34,8 +34,7 @@ function About() {
 
       setStats({
         projects: Math.floor(targets.projects * progress),
-        years: Math.floor(targets.years * progress),
-        satisfaction: Math.floor(targets.satisfaction * progress)
+        years: Math.floor(targets.years * progress)
       })
 
       if (progress < 1) {
@@ -64,10 +63,6 @@ function About() {
             <div className="stat-item">
               <h3 className="stat-number">{stats.years}</h3>
               <p>Années d'expérience</p>
-            </div>
-            <div className="stat-item">
-              <h3 className="stat-number">{stats.satisfaction}%</h3>
-              <p>Satisfaction client</p>
             </div>
           </div>
         </div>
