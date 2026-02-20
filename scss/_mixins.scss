@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+// Mixins utilitaires
+
+// Flexbox centré
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Transition
+@mixin transition($property: all, $duration: $transition-base) {
+    transition: $property $duration;
+}
+
+// Box shadow avec hover
+@mixin shadow-hover($shadow: $shadow, $shadow-hover: $shadow-lg) {
+    box-shadow: $shadow;
+    transition: all $transition-base;
+    
+    &:hover {
+        box-shadow: $shadow-hover;
+        transform: translateY(-5px);
+    }
+}
+
+// Responsive
+@mixin mobile {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-wide) {
+        @content;
+    }
+}
+
+// Bouton de base
+@mixin button-base {
+    padding: 12px 30px;
+    border-radius: $radius-md;
+    text-decoration: none;
+    font-weight: 600;
+    @include transition(all);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+// Underline animé
+@mixin animated-underline($color: $primary-color, $height: 2px) {
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: $height;
+        background-color: $color;
+        @include transition(width);
+    }
+    
+    &:hover::after,
+    &.active::after {
+        width: 100%;
+    }
+}
+
+// Card de base
+@mixin card-base {
+    background-color: $bg-color;
+    border-radius: $radius-xl;
+    padding: $spacing-lg;
+    box-shadow: $shadow;
+}
+
+// Gradient text
+@mixin gradient-text($gradient: $gradient-accent) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

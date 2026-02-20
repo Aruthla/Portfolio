@@ -1,0 +1,13 @@
+# Dépendances
+node_modules/
+
+# Fichiers CSS compilés (généré depuis SASS)
+style.css
+style.css.map
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

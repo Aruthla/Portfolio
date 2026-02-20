@@ -1,0 +1,100 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Navigation
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow;
+    z-index: 1000;
+    @include transition(all);
+
+    &.scrolled {
+        padding: $spacing-sm 0;
+    }
+
+    .container {
+        @include flex-center;
+        justify-content: space-between;
+        padding: $spacing-md;
+    }
+}
+
+.logo {
+    h2 {
+        color: $primary-color;
+        font-size: $font-size-2xl;
+        font-weight: bold;
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+
+    @include mobile {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background-color: $bg-color;
+        flex-direction: column;
+        width: 100%;
+        padding: $spacing-md;
+        box-shadow: $shadow;
+        @include transition(right);
+
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    @include transition(color);
+    @include animated-underline;
+
+    &:hover,
+    &.active {
+        color: $primary-color;
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: $spacing-xs;
+
+    @include mobile {
+        display: flex;
+    }
+
+    span {
+        width: 25px;
+        height: 3px;
+        background-color: $text-color;
+        @include transition(all);
+        border-radius: 3px;
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    }
+}

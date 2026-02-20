@@ -1,0 +1,346 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Sections communes
+.section-title {
+    text-align: center;
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-xl;
+    color: $text-color;
+    position: relative;
+
+    @include mobile {
+        font-size: $font-size-3xl;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background: $gradient-accent;
+        margin: $spacing-md auto 0;
+        border-radius: 2px;
+    }
+}
+
+// Section À propos
+.about {
+    padding: $spacing-2xl $spacing-md;
+    background-color: $bg-light;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-text {
+    p {
+        font-size: $font-size-lg;
+        color: $text-light;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px;
+    @include card-base;
+    @include shadow-hover;
+
+    .stat-number {
+        font-size: $font-size-5xl;
+        @include gradient-text;
+        font-weight: bold;
+        margin-bottom: $spacing-sm;
+
+        @include mobile {
+            font-size: $font-size-3xl;
+        }
+    }
+}
+
+// Section Compétences
+.skills {
+    padding: $spacing-2xl $spacing-md;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    padding: $spacing-lg 30px;
+    @include card-base;
+    text-align: center;
+    border: 2px solid transparent;
+    @include transition(all);
+
+    &:hover {
+        transform: translateY(-10px);
+        border-color: $primary-color;
+        box-shadow: $shadow-lg;
+    }
+
+    .skill-icon {
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+    }
+
+    h3 {
+        font-size: $font-size-2xl;
+        margin-bottom: 15px;
+        color: $text-color;
+    }
+
+    p {
+        color: $text-light;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: $bg-light;
+    border-radius: $radius-lg;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: $gradient-accent;
+    border-radius: $radius-lg;
+    width: 0;
+    @include transition(width, 1s);
+}
+
+// Section Projets
+.projects {
+    padding: $spacing-2xl $spacing-md;
+    background-color: $bg-light;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: $spacing-lg;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-card {
+    background-color: $bg-color;
+    border-radius: $radius-xl;
+    overflow: hidden;
+    box-shadow: $shadow;
+    @include transition(transform);
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: $shadow-lg;
+
+        .project-overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.project-image {
+    height: 250px;
+    background: $gradient-primary;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    @include flex-center;
+    opacity: 0;
+    @include transition(opacity);
+}
+
+.project-link {
+    color: $text-white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid $text-white;
+    border-radius: $radius-md;
+    font-weight: 600;
+    @include transition(all);
+
+    &:hover {
+        background-color: $text-white;
+        color: $primary-color;
+    }
+}
+
+.project-info {
+    padding: 30px;
+
+    h3 {
+        font-size: $font-size-2xl;
+        margin-bottom: 15px;
+        color: $text-color;
+    }
+
+    p {
+        color: $text-light;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.project-tags {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 6px 15px;
+    background-color: $bg-light;
+    color: $primary-color;
+    border-radius: 20px;
+    font-size: $font-size-sm;
+    font-weight: 500;
+}
+
+// Section Contact
+.contact {
+    padding: $spacing-2xl $spacing-md;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-info {
+    h3 {
+        font-size: $font-size-3xl;
+        margin-bottom: $spacing-md;
+        color: $text-color;
+    }
+
+    p {
+        color: $text-light;
+        margin-bottom: 30px;
+        font-size: $font-size-lg;
+    }
+}
+
+.contact-details {
+    margin-bottom: $spacing-lg;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: $spacing-md;
+    color: $text-light;
+
+    svg {
+        stroke: $primary-color;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: $spacing-md;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: $radius-full;
+    background-color: $bg-light;
+    @include flex-center;
+    color: $primary-color;
+    @include transition(all);
+
+    &:hover {
+        background-color: $primary-color;
+        color: $text-white;
+        transform: translateY(-5px);
+    }
+}
+
+// Formulaire de contact
+.contact-form {
+    background-color: $bg-light;
+    padding: $spacing-lg;
+    border-radius: $radius-xl;
+
+    button {
+        width: 100%;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: $font-size-base;
+    }
+}
+
+.form-group {
+    margin-bottom: 25px;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid $border-color;
+        border-radius: $radius-md;
+        font-size: $font-size-base;
+        font-family: inherit;
+        @include transition(border-color);
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: $bg-dark;
+    color: $text-white;
+    text-align: center;
+    padding: $spacing-lg $spacing-md;
+
+    p {
+        margin-bottom: $spacing-sm;
+        opacity: 0.8;
+    }
+}

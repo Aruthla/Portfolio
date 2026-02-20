@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Reset et styles de base
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family;
+    color: $text-color;
+    background-color: $bg-color;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: $breakpoint-wide;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+// Utilitaires
+.text-center {
+    text-align: center;
+}
+
+.gradient-text {
+    @include gradient-text;
+}

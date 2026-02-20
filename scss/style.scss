@@ -1,0 +1,14 @@
+// Importation des fichiers SASS
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+@use 'navigation';
+@use 'hero';
+@use 'sections';
+
+// Styles spécifiques supplémentaires
+@media (max-width: $breakpoint-mobile) {
+    .hero-content h1 {
+        font-size: $font-size-3xl;
+    }
+}

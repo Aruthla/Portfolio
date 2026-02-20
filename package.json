@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-personnel",
+  "version": "1.0.0",
+  "description": "Site portfolio personnel en HTML, CSS (SASS) et JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch scss/style.scss:style.css",
+    "build": "sass scss/style.scss:style.css --style=compressed",
+    "start": "npm run sass"
+  },
+  "keywords": [
+    "portfolio",
+    "sass",
+    "web"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}
