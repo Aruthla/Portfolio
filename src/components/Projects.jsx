@@ -9,10 +9,19 @@ const projectsData = [
     image: `${import.meta.env.BASE_URL}tirage-runes.jpg`
   },
   {
-    title: 'Christine Borde - Tarologue',
-    description: 'Site vitrine professionnel pour une tarologue, hébergé sur Faaster (anciennement ThemeCloud), une solution WordPress tout-en-un',
+    title: 'Christine Borde - Thérapeute vibratoire',
+    description: 'Site vitrine professionnel pour une thérapeute vibratoire, hébergé sur Faaster (anciennement ThemeCloud), une solution WordPress tout-en-un',
     tags: ['Faaster', 'WordPress', 'Hébergement'],
-    link: 'https://christineborde.com/'
+    link: 'https://christineborde.com/',
+    image: `${import.meta.env.BASE_URL}Logo rond.png`,
+    isLogo: true
+  },
+  {
+    title: 'ArteNote',
+    description: 'Plateforme web pour centraliser et organiser ses idées créatives (romans, jeux vidéo, sessions D&D...). Système de fiches interconnectées avec plus de 30 catégories',
+    tags: ['Next.js', 'PostgreSQL', 'Stripe', 'SASS'],
+    link: '#',
+    image: `${import.meta.env.BASE_URL}Finale.jpg`
   }
 ]
 
@@ -24,7 +33,7 @@ function Projects() {
         <div className="projects-grid">
           {projectsData.map((project, index) => (
             <div key={index} className="project-card">
-              <div className="project-image">
+              <div className={`project-image ${project.isLogo ? 'logo-image' : ''}`}>
                 {project.image && <img src={project.image} alt={project.title} />}
                 <div className="project-overlay">
                   <a 

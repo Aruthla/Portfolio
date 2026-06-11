@@ -23,6 +23,18 @@ html::after {
     width: 200px;
     z-index: 999999;
     pointer-events: none;
+
+    @media (max-width: 1400px) {
+        width: 50px;
+    }
+
+    @include tablet {
+        width: 30px;
+    }
+
+    @include mobile {
+        width: 20px;
+    }
 }
 
 html::before {
@@ -46,6 +58,18 @@ body {
     max-width: $breakpoint-wide;
     margin: 0 auto;
     padding: 0 $spacing-md;
+
+    @media (max-width: 1400px) {
+        padding: 0 $spacing-lg;
+    }
+
+    @include tablet {
+        padding: 0 $spacing-lg;
+    }
+
+    @include mobile {
+        padding: 0 $spacing-md;
+    }
 }
 
 // Utilitaires

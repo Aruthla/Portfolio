@@ -80,6 +80,14 @@
         }
     }
 
+    @include tablet {
+        gap: $spacing-md;
+
+        a {
+            font-size: $font-size-sm;
+        }
+    }
+
     @include mobile {
         position: fixed;
         top: 73px;
