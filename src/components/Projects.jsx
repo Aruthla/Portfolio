@@ -20,7 +20,7 @@ const projectsData = [
     title: 'ArteNote',
     description: 'Plateforme web pour centraliser et organiser ses idées créatives (romans, jeux vidéo, sessions D&D...). Système de fiches interconnectées avec plus de 30 catégories',
     tags: ['Next.js', 'PostgreSQL', 'Stripe', 'SASS'],
-    link: '#',
+    link: `${import.meta.env.BASE_URL}artenote.html`,
     image: `${import.meta.env.BASE_URL}Finale.jpg`
   }
 ]

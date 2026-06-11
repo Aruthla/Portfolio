@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ArteNote - Plateforme web pour centraliser et organiser vos idées créatives">
+    <meta name="keywords" content="création, écriture, worldbuilding, organisation, roman, jeux vidéo, D&D">
+    <meta name="author" content="Laëtitia Borde">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ArteNote - Organisez vos créations">
+    <meta property="og:description" content="Centralisez et organisez vos idées créatives avec plus de 30 catégories interconnectées">
+    <meta property="og:type" content="website">
+    
+    <title>ArteNote - Organisez vos créations | En Développement</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="artenote-styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Finale.jpg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📝</span>
+                <span class="logo-text">ArteNote</span>
+                <span class="badge-dev">En développement</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#tech">Technologies</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Projet en cours de développement
+            </div>
+            
+            <h1 class="hero-title">
+                Donnez vie à vos 
+                <span class="gradient-text">univers créatifs</span>
+            </h1>
+            
+            <p class="hero-description">
+                ArteNote est une plateforme web innovante pour centraliser et organiser toutes vos idées créatives. 
+                Romans, jeux vidéo, sessions D&D... créez des fiches interconnectées et structurez vos univers avec plus de 30 catégories dédiées.
+            </p>
+            
+            <div class="hero-cta">
+                <a href="#features" class="btn btn-primary">
+                    <span>Découvrir les fonctionnalités</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#tech" class="btn btn-secondary">
+                    <span>Stack technique</span>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Catégories</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Créations possibles</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Interconnecté</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <div class="mockup-container">
+                <div class="mockup-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-title">ArteNote - Dashboard</div>
+                    </div>
+                    <div class="window-content">
+                        <img src="Finale.jpg" alt="ArteNote Dashboard Preview" />
+                    </div>
+                </div>
+                <div class="mockup-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fonctionnalités principales</h2>
+                <p class="section-subtitle">
+                    Des outils puissants pour organiser et développer vos créations
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>30+ Catégories</h3>
+                    <p>Personnages, lieux, scènes, chronologies, relations, objets, créatures, langues, religions et bien plus encore.</p>
+                    <ul class="feature-list">
+                        <li>✨ Univers & Worldbuilding</li>
+                        <li>👥 Personnages détaillés</li>
+                        <li>🗺️ Géographie complète</li>
+                        <li>📖 Scènes & Chronologies</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card featured">
+                    <div class="feature-badge">⭐ Populaire</div>
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 2V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 19V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.93 4.93L7.05 7.05" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.95 16.95L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M2 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M19 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.93 19.07L7.05 16.95" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.95 7.05L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Système d'interconnexions</h3>
+                    <p>Reliez tous vos éléments entre eux. Créez un réseau de relations complexe et visualisez les connexions.</p>
+                    <ul class="feature-list">
+                        <li>🔗 Graphe interactif de relations</li>
+                        <li>🎯 13 types de relations</li>
+                        <li>📊 Visualisation en temps réel</li>
+                        <li>🌐 Navigation intuitive</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Recherche Globale</h3>
+                    <p>Trouvez instantanément n'importe quel élément avec la recherche universelle (Ctrl+K).</p>
+                    <ul class="feature-list">
+                        <li>⚡ Recherche temps réel</li>
+                        <li>🔍 Multi-catégories</li>
+                        <li>⌨️ Raccourcis clavier</li>
+                        <li>📋 Preview détaillé</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 3V21" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 9H9" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 15H9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Dashboard Interactif</h3>
+                    <p>Vue d'ensemble de toutes vos créations avec statistiques et graphiques en temps réel.</p>
+                    <ul class="feature-list">
+                        <li>📈 Graphiques dynamiques</li>
+                        <li>⏰ Dernières modifications</li>
+                        <li>🎨 Actions rapides</li>
+                        <li>📊 Suivi de progression</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M21 5V12H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Timeline Interactive</h3>
+                    <p>Créez et visualisez vos chronologies d'événements avec un éditeur visuel puissant.</p>
+                    <ul class="feature-list">
+                        <li>⏳ Événements structurés</li>
+                        <li>📅 Calendriers personnalisés</li>
+                        <li>🎭 Niveaux d'importance</li>
+                        <li>🔄 Intégration avec scènes</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Système d'Abonnements</h3>
+                    <p>Plan gratuit généreux et options premium pour des créations illimitées.</p>
+                    <ul class="feature-list">
+                        <li>🆓 Gratuit : 5 par catégorie</li>
+                        <li>💎 Premium : Illimité</li>
+                        <li>💳 Paiement sécurisé Stripe</li>
+                        <li>🔄 Gestion flexible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Stack Technique</h2>
+                <p class="section-subtitle">
+                    Technologies modernes pour une expérience optimale
+                </p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">⚛️</span>
+                            <span class="tech-name">Next.js 14</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🎨</span>
+                            <span class="tech-name">SASS/SCSS</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📘</span>
+                            <span class="tech-name">TypeScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🌐</span>
+                            <span class="tech-name">React 18</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Backend & Database</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">🗄️</span>
+                            <span class="tech-name">PostgreSQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🔷</span>
+                            <span class="tech-name">Prisma ORM</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">☁️</span>
+                            <span class="tech-name">Supabase</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🔐</span>
+                            <span class="tech-name">NextAuth.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Services & Intégrations</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">💳</span>
+                            <span class="tech-name">Stripe</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📧</span>
+                            <span class="tech-name">Resend</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🌍</span>
+                            <span class="tech-name">next-intl (i18n)</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📊</span>
+                            <span class="tech-name">Recharts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>UX & Qualité</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">✅</span>
+                            <span class="tech-name">Zod Validation</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">♿</span>
+                            <span class="tech-name">ARIA & WCAG</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📱</span>
+                            <span class="tech-name">Responsive Design</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🎭</span>
+                            <span class="tech-name">React Flow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">État du développement</h2>
+                <p class="section-subtitle">
+                    Suivez l'avancement du projet en temps réel
+                </p>
+            </div>
+            
+            <div class="roadmap-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                            <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Phase 1 : Fondations & Infrastructure</h3>
+                        <p class="timeline-status">✅ 100% Complet</p>
+                        <ul>
+                            <li>Base de données PostgreSQL avec Prisma</li>
+                            <li>Authentification NextAuth.js</li>
+                            <li>Système d'abonnements Stripe</li>
+                            <li>Architecture de composants réutilisables</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                            <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Phase 2 : Pages Principales</h3>
+                        <p class="timeline-status">✅ 100% Complet</p>
+                        <ul>
+                            <li>Dashboard avec statistiques et graphiques</li>
+                            <li>Recherche globale (Ctrl+K)</li>
+                            <li>Internationalisation FR/EN</li>
+                            <li>Filtres & tri avancés</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item in-progress">
+                    <div class="timeline-marker">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Phase 3 : Catégories Essentielles</h3>
+                        <p class="timeline-status">⏳ 57% En cours</p>
+                        <ul>
+                            <li>✅ Scènes & Relations (graphe interactif)</li>
+                            <li>✅ Chronologies & Timeline</li>
+                            <li>✅ Système multi-select géographique</li>
+                            <li>⏳ Créatures, Flore, Planètes</li>
+                            <li>⏳ Langues, Religions, Traditions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Phase 4-5 : Fonctionnalités Avancées</h3>
+                        <p class="timeline-status">📋 Planifié</p>
+                        <ul>
+                            <li>Catégories secondaires (Objets, Commerce...)</li>
+                            <li>Galeries & médias (Cloudinary/S3)</li>
+                            <li>Générateurs & outils (noms, cartes...)</li>
+                            <li>Export & partage (PDF, Markdown, JSON)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Phase 6-7 : Optimisation & Lancement</h3>
+                        <p class="timeline-status">🚀 À venir</p>
+                        <ul>
+                            <li>Performance (cache, code splitting)</li>
+                            <li>Mode sombre & PWA</li>
+                            <li>Tests & sécurité</li>
+                            <li>Documentation & support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-summary">
+                <div class="progress-card">
+                    <div class="progress-number">2</div>
+                    <div class="progress-label">Phases complètes</div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-number">57%</div>
+                    <div class="progress-label">Phase actuelle</div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-number">30+</div>
+                    <div class="progress-label">Catégories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Intéressé par le projet ?</h2>
+                    <p>
+                        ArteNote est actuellement en développement actif. 
+                        Si vous souhaitez en savoir plus, suivre l'avancement ou être notifié du lancement, 
+                        n'hésitez pas à me contacter.
+                    </p>
+                    
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <span class="feature-emoji">🚀</span>
+                            <div>
+                                <strong>Lancement prévu</strong>
+                                <p>Première version beta en 2026</p>
+                            </div>
+                        </div>
+                        <div class="contact-feature">
+                            <span class="feature-emoji">💡</span>
+                            <div>
+                                <strong>Suggestions</strong>
+                                <p>Vos idées sont les bienvenues</p>
+                            </div>
+                        </div>
+                        <div class="contact-feature">
+                            <span class="feature-emoji">📧</span>
+                            <div>
+                                <strong>Newsletter</strong>
+                                <p>Restez informé des nouveautés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3>Me contacter</h3>
+                        <p>Développeuse web passionnée par la création et l'organisation</p>
+                        <a href="mailto:contact@laëtitia-borde.dev" class="btn btn-primary">
+                            <span>Envoyer un email</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M18 4L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M18 4L12 18L9 13L4 10L18 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com/Aruthla" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.295 24 12C24 5.37 18.63 0 12 0Z"/>
+                                </svg>
+                            </a>
+                            <a href="https://aruthla.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Portfolio">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">📝</span>
+                    <span class="logo-text">ArteNote</span>
+                </div>
+                <p class="footer-text">
+                    Projet en développement actif - © 2026 Laëtitia Borde
+                </p>
+                <div class="footer-links">
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#tech">Technologies</a>
+                    <a href="#roadmap">Roadmap</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="artenote-script.js"></script>
+</body>
+</html>
